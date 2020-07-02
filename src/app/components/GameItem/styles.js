@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { grey, red, blue } from '@constants/colors';
+import { grey, red, blue, white, backgroudSelected, borderSelected } from '@constants/colors';
 
 export default StyleSheet.create({
   imageArea: {
@@ -7,7 +7,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: 75,
+    width: 85,
     height: 100,
     marginRight: 5,
   },
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     height: 120,
     paddingLeft: 5,
     backgroundColor: blue,
-//    backgroundColor: '#AA2B2B',
+//    backgroundColor: red,
     borderRadius: 5,
     margin: 5,
   },
@@ -27,16 +27,15 @@ export default StyleSheet.create({
     marginBottom: 10,
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-//    justifyContent: 'center',
   },
   name: {
     marginBottom: 2,
-    color: 'white',
+    color: white,
+    fontStyle: 'italic',
     fontWeight: 'bold',
     fontSize: 20,
     elevation: 1,
     shadowRadius: 0.2,
-    shadowColor: 'black',
     shadowOpacity: 0.7,
     shadowOffset: {
       width: 1,
@@ -49,5 +48,17 @@ export default StyleSheet.create({
   year: {
     fontStyle: 'italic',
     fontSize: 12,
+  },
+  selectedInfoArea: {
+    display: 'none',
+  },
+  selectedImage: {
+    width: 350,
+  },
+  selectedGameContainer: {
+    borderWidth: 4,
+    borderColor: borderSelected,
+    borderRadius: 6,
+    backgroundColor: backgroudSelected,
   },
 });

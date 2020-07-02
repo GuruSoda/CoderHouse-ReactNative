@@ -1,4 +1,7 @@
 export const grey = '#e1e1e1';
-export const red = '#bc0c1a';
+export const red = '#AA2B2B';
 export const blue = '#428bca';
 export const transparent = 'transparent';
+export const white = '#fff';
+export const backgroudSelected = '#AA2B2B';
+export const borderSelected = '#20232a';
