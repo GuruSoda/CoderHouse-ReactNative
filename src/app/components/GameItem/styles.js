@@ -33,7 +33,7 @@ export default StyleSheet.create({
     color: white,
     fontStyle: 'italic',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 15,
     elevation: 1,
     shadowRadius: 0.2,
     shadowOpacity: 0.7,

@@ -18,7 +18,7 @@ function GameItem({image, name, manufacturer, year}) {
           <Image
             style={[styles.image, selected && styles.selectedImage]}
             resizeMode="contain"
-            source={image}
+            source={{uri: image}}
           />
         </View>
         <View style={[styles.infoArea, selected && styles.selectedInfoArea]}>
