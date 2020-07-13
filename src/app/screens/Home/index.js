@@ -1,19 +1,33 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, Button, Image, View, Text } from 'react-native';
 
-import GameItem from '@components/GameItem';
-
+import logo from '@assets/logo-mame.png';
 import styles from './styles';
+import GameItem from '@components/GameItem';
+import Games from './constant.json';
 
-import covergng from '@assets/gng.png';
-import coverrygar from '@assets/rygar.png';
+function Home({navigation}) {
+  const handleListGames = () => navigation.navigate('ListGames');
+  const handleListMarquee = () => navigation.navigate('ListMarquee');
 
-function Home() {
+  let randomGame = Math.floor(Math.random() * Games.length);
+
   return (
     <SafeAreaView style={styles.container}>
-      <GameItem image={covergng} name={'Ghosts n Goblins'} manufacturer={'Capcom'} year={1985}/>
-      <GameItem image={coverrygar} name={'Rygar (US set 1)'} manufacturer={'Tecmo'} year={1986}/>
-     </SafeAreaView>
+      <Image source={logo} style={styles.imagen} />
+      <View style={styles.menu}>
+        <Button title="Listado de Marquesinas" onPress={handleListMarquee} />
+        <Button title="Listado de Juegos" onPress={handleListGames} />
+      </View>
+      <Text>Random Game</Text>
+      <GameItem
+        style={styles.randomGame}
+        image={Games[randomGame].flyer}
+        name={Games[randomGame].description}
+        manufacturer={Games[randomGame].manufacturer}
+        year={Games[randomGame].year}
+      />
+    </SafeAreaView>
   );
 }
 

@@ -4,7 +4,6 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import styles from './styles';
 
 function GameItem({image, name, manufacturer, year}) {
-
   const [selected, setSelected] = useState(false);
 
   const onPress = () => {

@@ -5,7 +5,17 @@ export default StyleSheet.create({
   container: {
     backgroundColor: grey,
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
+  },
+  imagen: {
+    flex: 3,
+    resizeMode: 'center',
+  },
+  menu: {
+    flex: 6,
+    justifyContent: 'space-around',
+  },
+  randomGame: {
+    flex: 1,
   },
 });
