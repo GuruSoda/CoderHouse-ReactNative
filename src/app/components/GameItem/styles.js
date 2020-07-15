@@ -3,6 +3,7 @@ import { grey, red, blue, white, backgroudSelected, borderSelected } from '@cons
 
 export default StyleSheet.create({
   imageArea: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },

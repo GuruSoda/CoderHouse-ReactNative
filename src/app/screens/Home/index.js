@@ -4,12 +4,12 @@ import { SafeAreaView, Button, Image, View, Text } from 'react-native';
 import logo from '@assets/logo-mame.png';
 import styles from './styles';
 import GameItem from '@components/GameItem';
-import Games from './constant.json';
 
-function Home({navigation}) {
+function Home({navigation, route}) {
   const handleListGames = () => navigation.navigate('ListGames');
   const handleListMarquee = () => navigation.navigate('ListMarquee');
 
+  const {Games} = route.params;
   let randomGame = Math.floor(Math.random() * Games.length);
 
   return (
@@ -20,13 +20,7 @@ function Home({navigation}) {
         <Button title="Listado de Juegos" onPress={handleListGames} />
       </View>
       <Text>Random Game</Text>
-      <GameItem
-        style={styles.randomGame}
-        image={Games[randomGame].flyer}
-        name={Games[randomGame].description}
-        manufacturer={Games[randomGame].manufacturer}
-        year={Games[randomGame].year}
-      />
+      <GameItem style={styles.randomGame} game={Games[randomGame]} />
     </SafeAreaView>
   );
 }

@@ -1,27 +1,19 @@
 import React from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 
-import Games from './constant.json';
 import GameItem from '@components/GameItem';
 
 import styles from './styles';
 
 // si no consives la eternidad lo que haces aqui es irrelevante.
 
-function GameList() {
+function GameList({route}) {
+  const {Games} = route.params;
+
   const keyExtractor = ({id_game}) => `${id_game}`;
 
   const renderItem = ({item}) => {
-    const {flyer, description, manufacturer, year} = item;
-
-    return (
-      <GameItem
-        image={flyer}
-        name={description}
-        manufacturer={manufacturer}
-        year={year}
-      />
-    );
+    return <GameItem game={item} />;
   };
 
   return (

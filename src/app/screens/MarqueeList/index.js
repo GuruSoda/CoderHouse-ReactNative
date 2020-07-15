@@ -3,10 +3,11 @@ import { SafeAreaView, FlatList } from 'react-native';
 
 import styles from './styles';
 
-import Games from './constant.json';
 import MarqueeItem from '@components/MarqueeItem';
 
-function MarqueeList() {
+function MarqueeList({route}) {
+  const {Games} = route.params;
+
   const keyExtractor = ({id_game}) => `${id_game}`;
 
   const renderItem = ({item}) => {
