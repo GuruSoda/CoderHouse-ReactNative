@@ -6,3 +6,4 @@ export const white = '#fff';
 export const black = '#000';
 export const backgroudSelected = '#AA2B2B';
 export const borderSelected = '#20232a';
+export const dark = '#1E1E1E';

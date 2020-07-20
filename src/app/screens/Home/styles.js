@@ -1,11 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { grey } from '@constants/colors';
+import { grey, dark } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
     backgroundColor: grey,
     flex: 1,
     alignItems: 'center',
+  },
+  darkContainer: {
+    backgroundColor: dark,
   },
   imagen: {
     flex: 3,
@@ -17,5 +20,15 @@ export default StyleSheet.create({
   },
   randomGame: {
     flex: 1,
+  },
+  texto: {
+    textAlign: 'left',
+    alignSelf: 'flex-start',
+    marginLeft: 5,
+    marginBottom: 0,
+    paddingBottom: 0,
+  },
+  darkTexto: {
+    color: grey,
   },
 });

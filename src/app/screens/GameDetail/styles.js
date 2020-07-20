@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { grey, blue, black } from '@constants/colors';
+import { grey, blue, black, dark } from '@constants/colors';
 
 export default StyleSheet.create({
   container: {
@@ -8,6 +8,9 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: 5,
+  },
+  darkContainer: {
+    backgroundColor: dark,
   },
   image: {
     flex: 1,
@@ -22,5 +25,6 @@ export default StyleSheet.create({
     margin: 5,
     borderWidth: 1,
     borderColor: black,
+    borderRadius: 5,
   },
 });

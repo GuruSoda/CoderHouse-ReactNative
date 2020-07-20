@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { useNavigation } from '@react-navigation/native';
+import React, {useState} from 'react';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import styles from './styles';
 
 function GameItem({game}) {
+  const {flyer, description, manufacturer, year} = game;
   const navigation = useNavigation();
 
   const [selected, setSelected] = useState(false);
@@ -28,15 +29,15 @@ function GameItem({game}) {
           <Image
             style={[styles.image, selected && styles.selectedImage]}
             resizeMode="center"
-            source={{uri: game.flyer}}
+            source={{uri: flyer}}
           />
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={onPressInfo}>
         <View style={[styles.infoArea, selected && styles.selectedInfoArea]}>
-          <Text style={styles.name}>{game.description}</Text>
-          <Text style={styles.manufacturer}>{game.manufacturer}</Text>
-          <Text style={styles.year}>{game.year}</Text>
+          <Text style={styles.name}>{description}</Text>
+          <Text style={styles.manufacturer}>{manufacturer}</Text>
+          <Text style={styles.year}>{year}</Text>
         </View>
       </TouchableOpacity>
     </View>
