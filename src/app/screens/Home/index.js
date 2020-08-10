@@ -12,6 +12,7 @@ function Home({navigation, route}) {
   const handleListGames = () => navigation.navigate('ListGames');
   const handleListMarquee = () => navigation.navigate('ListMarquee');
   const handleOpciones = () => navigation.navigate('Opciones');
+  const handleSnaps = () => navigation.navigate('Snaps');
 
   const {Games} = route.params;
   let randomGame = Math.floor(Math.random() * Games.length);
@@ -20,8 +21,9 @@ function Home({navigation, route}) {
     <SafeAreaView style={[styles.container,  !isLightTheme && styles.darkContainer]}>
       <Image source={logo} style={styles.imagen} />
       <View style={styles.menu}>
-        <Button title="Listado de Marquesinas" onPress={handleListMarquee} />
         <Button title="Listado de Juegos" onPress={handleListGames} />
+        <Button title="Listado de Snapshots" onPress={handleSnaps} />
+        <Button title="Listado de Marquesinas" onPress={handleListMarquee} />
         <Button title="Opciones" onPress={handleOpciones} />
       </View>
       <Text style={[styles.texto, !isLightTheme && styles.darkTexto]}>Random Game</Text>

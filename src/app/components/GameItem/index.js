@@ -3,9 +3,10 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import styles from './styles';
+import noFlyer from '@assets/no-flyers-black-thumb.png';
 
 function GameItem({game}) {
-  const {flyer, description, manufacturer, year} = game;
+  const {flyers, snap, titles, description, manufacturer, year} = game;
   const navigation = useNavigation();
 
   const [selected, setSelected] = useState(false);
@@ -22,14 +23,21 @@ function GameItem({game}) {
     setSelected(!selected);
   };
 
+  let imagen = '';
+
+  if (flyers) imagen = flyers;
+  else if (titles) imagen = titles;
+  else if (snap) imagen = snap;
+
   return (
-    <View style={[styles.gameContainer, selected && styles.selectedGameContainer]}>
+    <View
+      style={[styles.gameContainer, selected && styles.selectedGameContainer]}>
       <TouchableOpacity onPress={onPressImage}>
         <View style={styles.imageArea}>
           <Image
             style={[styles.image, selected && styles.selectedImage]}
             resizeMode="center"
-            source={{uri: flyer}}
+            source={imagen ? {uri: imagen} : noFlyer}
           />
         </View>
       </TouchableOpacity>

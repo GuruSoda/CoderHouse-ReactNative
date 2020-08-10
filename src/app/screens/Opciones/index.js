@@ -4,7 +4,7 @@ import {SafeAreaView, Switch, Text} from 'react-native';
 import styles from './styles';
 import ThemeContext from '@contexts/themeContext';
 
-function Opciones({route}) {
+function Opciones() {
   const {isLightTheme, toggleTheme} = useContext(ThemeContext);
 
   return (
